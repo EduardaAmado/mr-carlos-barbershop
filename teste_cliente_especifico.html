@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Específico Login Cliente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold text-center mb-6">🧑‍💼 Teste Login Cliente</h1>
+        
+        <div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded">
+            <h3 class="font-semibold">Credenciais de Teste:</h3>
+            <p><strong>Email:</strong> joao.cliente@teste.com</p>
+            <p><strong>Senha:</strong> cliente123</p>
+        </div>
+        
+        <div class="space-y-4">
+            <button onclick="abrirLogin()" 
+                    class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700">
+                🔗 Abrir Página de Login Original
+            </button>
+            
+            <button onclick="testarComFrame()" 
+                    class="w-full bg-green-600 text-white p-3 rounded hover:bg-green-700">
+                🧪 Testar Login em Frame
+            </button>
+        </div>
+        
+        <div id="resultado" class="mt-4 hidden"></div>
+        
+        <iframe id="loginFrame" src="" class="w-full h-96 border rounded mt-4 hidden"></iframe>
+    </div>
+
+    <script>
+        function abrirLogin() {
+            window.open('/mr-carlos-barbershop/pages/login.php', '_blank');
+        }
+        
+        function testarComFrame() {
+            const frame = document.getElementById('loginFrame');
+            const resultado = document.getElementById('resultado');
+            
+            resultado.className = 'mt-4 p-3 rounded bg-blue-50 border border-blue-200';
+            resultado.innerHTML = '<div style="color: #3b82f6;">🔄 Carregando página de login em frame...</div>';
+            resultado.classList.remove('hidden');
+            
+            frame.src = '/mr-carlos-barbershop/pages/login.php';
+            frame.classList.remove('hidden');
+            
+            frame.onload = function() {
+                resultado.innerHTML = '<div style="color: #10b981;">✅ Página carregada! Use as credenciais acima para fazer login no frame.</div>';
+            };
+        }
+    </script>
+</body>
+</html>
