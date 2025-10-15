@@ -61,7 +61,7 @@ if ($_POST) {
             }
         } else {
             // Sistema de email não configurado, salvar no banco (opcional)
-            $erro = 'Sistema de email temporariamente indisponível. Entre em contato pelo telefone: (11) 99999-9999';
+            $erro = 'Sistema de email temporariamente indisponível. Entre em contato pelo telefone: 918 344 829';
         }
         
     } catch (Exception $e) {
@@ -158,7 +158,7 @@ include_once __DIR__ . '/../includes/header.php';
                             name="telefone" 
                             value="<?= htmlspecialchars($_POST['telefone'] ?? '') ?>"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dourado focus:border-transparent transition-all duration-200"
-                            placeholder="(11) 99999-9999"
+                            placeholder="918 344 829"
                         >
                     </div>
 
@@ -249,8 +249,8 @@ include_once __DIR__ . '/../includes/header.php';
                             <div>
                                 <h3 class="font-semibold text-gray-900 mb-1">Telefone</h3>
                                 <p class="text-gray-600">
-                                    <a href="tel:+5511999999999" class="hover:text-dourado transition-colors">
-                                        (11) 99999-9999
+                                    <a href="tel:+351918344829" class="hover:text-dourado transition-colors">
+                                        918 344 829
                                     </a>
                                 </p>
                                 <p class="text-sm text-gray-500">WhatsApp disponível</p>
@@ -283,15 +283,15 @@ include_once __DIR__ . '/../includes/header.php';
                     
                     <div class="space-y-3">
                         <div class="flex justify-between items-center py-2 border-b border-gray-100">
-                            <span class="font-medium text-gray-900">Segunda - Sexta</span>
-                            <span class="text-dourado font-semibold">09:00 - 19:00</span>
+                            <span class="font-medium text-gray-900">Terça - Quinta</span>
+                            <span class="text-dourado font-semibold">10:30-12:30 / 14:30-20:30</span>
                         </div>
                         <div class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span class="font-medium text-gray-900">Sábado</span>
-                            <span class="text-dourado font-semibold">09:00 - 17:00</span>
+                            <span class="text-dourado font-semibold">09:00-12:30 / 14:00-19:00</span>
                         </div>
                         <div class="flex justify-between items-center py-2">
-                            <span class="font-medium text-gray-900">Domingo</span>
+                            <span class="font-medium text-gray-900">Domingo e Segunda</span>
                             <span class="text-red-600 font-semibold">Fechado</span>
                         </div>
                     </div>

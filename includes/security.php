@@ -114,6 +114,20 @@ class SecurityManager
             'expires' => time() + 3600 // 1 hora
         ];
         
+        error_log("CSRF Token Generated: " . json_encode($_SESSION['csrf_tokens']));
+        error_log("Session Save Path: " . session_save_path());
+        error_log("Session Status: " . session_status());
+        error_log("CSRF Token Debug: Token generated: $token");
+        error_log("CSRF Token Debug: Session data after generation: " . json_encode($_SESSION));
+        error_log("Session Debug: Is session active? " . (session_status() === PHP_SESSION_ACTIVE ? 'Yes' : 'No'));
+        error_log("Session Debug: Session data before adding token: " . json_encode($_SESSION));
+        error_log("CSRF Token Debug: Adding token to session: $token");
+        if (!isset($_SESSION['csrf_tokens'])) {
+            error_log("CSRF Token Debug: csrf_tokens array not set in session. Initializing.");
+            $_SESSION['csrf_tokens'] = [];
+        }
+        error_log("CSRF Token Debug: csrf_tokens array before addition: " . json_encode($_SESSION['csrf_tokens']));
+
         return $token;
     }
 
@@ -635,3 +649,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 */
+
+session_write_close();
+error_log("Session Write Debug: Session data written: " . json_encode($_SESSION));

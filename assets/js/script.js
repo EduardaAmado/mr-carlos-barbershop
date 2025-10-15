@@ -466,6 +466,26 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => message.remove(), 300);
         }, 5000);
     });
+
+    // Scroll Reveal para elementos com .scroll-reveal
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+    } else {
+        // Fallback: mostrar todos imediatamente
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            el.classList.add('revealed');
+        });
+    }
 });
 
 // ==================================================

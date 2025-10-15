@@ -9,6 +9,7 @@
 session_start();
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../includes/helpers.php';
+require_once __DIR__ . '/../includes/db_connect.php';
 
 // Verificar se está logado como admin
 if (!is_logged_in('admin')) {
@@ -314,15 +315,15 @@ include_once __DIR__ . '/../includes/header.php';
                                             </div>
                                             <div>
                                                 <div class="text-sm font-medium text-gray-900"><?= htmlspecialchars($barbeiro['nome']) ?></div>
-                                                <div class="text-sm text-gray-500"><?= htmlspecialchars($barbeiro['especialidade']) ?></div>
+                                                <div class="text-sm text-gray-500"><?= htmlspecialchars($barbeiro['especialidade'] ?? 'N/A') ?></div>
                                             </div>
                                         </div>
                                     </td>
 
                                     <!-- Contato -->
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900"><?= htmlspecialchars($barbeiro['email']) ?></div>
-                                        <div class="text-sm text-gray-500"><?= htmlspecialchars($barbeiro['telefone']) ?></div>
+                                        <div class="text-sm text-gray-900"><?= htmlspecialchars($barbeiro['email'] ?? 'N/A') ?></div>
+                                        <div class="text-sm text-gray-500"><?= htmlspecialchars($barbeiro['telefone'] ?? 'N/A') ?></div>
                                     </td>
 
                                     <!-- Performance -->

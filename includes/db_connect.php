@@ -51,20 +51,30 @@ function close_db_connection($connection) {
  * @return mysqli_result|bool Resultado da query
  */
 function execute_prepared_query($query, $params = [], $types = '') {
-    global $pdo;
-    
+    $connection = get_db_connection();
+
     try {
-        $stmt = $pdo->prepare($query);
-        $stmt->execute($params);
-        
-        // Se é SELECT, retorna statement; se é INSERT/UPDATE/DELETE, retorna boolean
-        if (stripos($query, 'SELECT') === 0) {
-            return $stmt;
-        } else {
-            return $stmt->rowCount() > 0;
+        $stmt = $connection->prepare($query);
+
+        if ($types && $params) {
+            $stmt->bind_param($types, ...$params);
         }
-        
-    } catch (PDOException $e) {
+
+        $stmt->execute();
+
+        // Se é SELECT, retorna resultado; caso contrário, retorna boolean
+        if (stripos($query, 'SELECT') === 0) {
+            $result = $stmt->get_result();
+            $stmt->close();
+            close_db_connection($connection);
+            return $result;
+        } else {
+            $affected_rows = $stmt->affected_rows;
+            $stmt->close();
+            close_db_connection($connection);
+            return $affected_rows > 0;
+        }
+    } catch (mysqli_sql_exception $e) {
         error_log("Erro na query preparada: " . $e->getMessage());
         throw new Exception("Erro ao processar pedido.");
     }

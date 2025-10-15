@@ -83,40 +83,170 @@ $admin_logged = is_logged_in('admin');
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
     
     <!-- CSS Personalizado -->
-        <!-- CSS Principal -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/style.css" id="main-stylesheet">
+    <!-- CSS Principal com cache busting -->
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/style.css?v=<?php echo filemtime(__DIR__ . '/../assets/css/style.css'); ?>" id="main-stylesheet">
     
-    <!-- CSS Inline Fallback para casos críticos -->
+    <!-- CSS Inline Premium Garantido -->
     <style>
-        /* Fallback para garantir que elementos básicos funcionem */
-        .btn {
+        /* Variáveis CSS Premium */
+        :root {
+            --color-accent: #D4AF37;
+            --color-accent-hover: #B8921F;
+            --color-accent-glow: rgba(212, 175, 55, 0.3);
+            --color-dark: #1a1a1a;
+            --color-light: #ffffff;
+            --color-surface: #fafafa;
+            --color-text: #333333;
+            --color-text-secondary: #666666;
+            --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.25);
+            --shadow-gold-lg: 0 8px 25px rgba(212, 175, 55, 0.35);
+        }
+
+        /* Classes Premium Essenciais */
+        .btn-premium {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+            color: var(--color-dark);
+            border: none;
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            text-decoration: none;
-            border: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-gold);
+        }
+        
+        .btn-premium:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: var(--shadow-gold-lg);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+            padding: 0.875rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
             cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
-        .btn-primary {
-            background: linear-gradient(135deg, #C9A227 0%, #B8921F 100%);
-            color: white;
+        
+        .btn-secondary:hover {
+            background: var(--color-accent);
+            color: var(--color-dark);
+            transform: translateY(-2px);
         }
-        .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(201, 162, 39, 0.3);
+
+        .card-premium {
+            background: linear-gradient(145deg, var(--color-surface) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
         }
-        .stats-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        
+        .card-premium:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-gold-lg);
+            border-color: var(--color-accent);
         }
-        .dourado { color: #C9A227; }
-        .text-barbershop-gold { color: #C9A227; }
-        .bg-barbershop-gold { background-color: #C9A227; }
+
+        .text-accent { color: var(--color-accent) !important; }
+        .text-serif { font-family: Georgia, 'Times New Roman', serif; }
+        .heading-premium {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .decorative-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+            margin: 1rem auto;
+            border-radius: 3px;
+            box-shadow: 0 0 10px var(--color-accent-glow);
+        }
+
+        .decorative-circle {
+            width: 12px;
+            height: 12px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--color-accent-glow);
+            animation: goldPulse 3s ease-in-out infinite;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+            border-radius: 50%;
+            color: var(--color-dark);
+            font-size: 1.5rem;
+            box-shadow: 0 0 20px var(--color-accent-glow);
+        }
+
+        @keyframes goldPulse {
+            0%, 100% { box-shadow: 0 0 5px var(--color-accent-glow); }
+            50% { box-shadow: var(--shadow-gold); }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Fallback para Tailwind */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .text-center { text-align: center; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .text-white { color: white; }
+        .bg-white { background: white; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .text-lg { font-size: 1.125rem; }
+        .font-bold { font-weight: 700; }
+        .rounded-lg { border-radius: 0.5rem; }
     </style>
     
     <!-- Meta para PWA (futuro) -->
@@ -293,59 +423,73 @@ $admin_logged = is_logged_in('admin');
         </div>
     <?php endif; ?>
 
-    <!-- Script de verificação de CSS -->
+    <!-- Script de verificação de CSS otimizado -->
     <script>
-        // Verificar se o CSS principal foi carregado
+        // Verificação otimizada de CSS
         document.addEventListener('DOMContentLoaded', function() {
-            var testElement = document.createElement('div');
-            testElement.className = 'btn btn-primary';
-            testElement.style.display = 'none';
-            document.body.appendChild(testElement);
+            // Verificar se o link CSS está presente
+            var mainStylesheet = document.getElementById('main-stylesheet');
+            if (!mainStylesheet) {
+                console.warn('⚠️ Link do CSS principal não encontrado');
+                loadFallbackCSS();
+                return;
+            }
             
-            var computedStyle = window.getComputedStyle(testElement);
-            var hasValidCSS = computedStyle.background !== '' || computedStyle.backgroundColor !== '';
-            
-            document.body.removeChild(testElement);
-            
-            if (!hasValidCSS) {
-                console.warn('⚠️ CSS principal não foi carregado corretamente. Tentando recarregar...');
+            // Verificar se CSS foi aplicado através de uma classe premium
+            function checkCSSLoaded() {
+                var testDiv = document.createElement('div');
+                testDiv.className = 'btn-premium';
+                testDiv.style.position = 'absolute';
+                testDiv.style.visibility = 'hidden';
+                document.body.appendChild(testDiv);
                 
-                // Tentar recarregar o CSS
-                var newLink = document.createElement('link');
-                newLink.rel = 'stylesheet';
-                newLink.href = '<?php echo $base_url; ?>assets/css/style.css?v=' + Date.now();
-                newLink.onload = function() {
-                    console.log('✅ CSS recarregado com sucesso');
-                };
-                newLink.onerror = function() {
-                    console.error('❌ Falha ao recarregar CSS, usando fallback');
-                    addFallbackCSS();
-                };
-                document.head.appendChild(newLink);
+                var styles = window.getComputedStyle(testDiv);
+                var isLoaded = styles.background && styles.background !== 'rgba(0, 0, 0, 0)';
                 
-                // Função para adicionar CSS de emergência
-                function addFallbackCSS() {
-                    var fallbackCSS = document.createElement('style');
-                fallbackCSS.textContent = `
-                    .min-h-screen { min-height: 100vh; }
-                    .container { max-width: 1200px; margin: 0 auto; }
-                    .mx-auto { margin-left: auto; margin-right: auto; }
-                    .px-4 { padding-left: 1rem; padding-right: 1rem; }
-                    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-                    .text-center { text-align: center; }
-                    .font-bold { font-weight: 700; }
-                    .text-white { color: white; }
-                    .bg-white { background-color: white; }
-                    .shadow-lg { box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
-                    .rounded-lg { border-radius: 0.5rem; }
-                    `;
-                    document.head.appendChild(fallbackCSS);
+                document.body.removeChild(testDiv);
+                
+                if (isLoaded) {
+                    console.log('✅ CSS Premium carregado com sucesso');
+                } else {
+                    console.warn('⚠️ CSS Premium não detectado, aplicando fallback');
+                    loadFallbackCSS();
                 }
+            }
+            
+            // Aguardar um momento para o CSS carregar
+            setTimeout(checkCSSLoaded, 100);
+            
+            function loadFallbackCSS() {
+                if (document.getElementById('fallback-css')) return; // Evitar duplicação
                 
-                // Aplicar fallback imediatamente como backup
-                setTimeout(addFallbackCSS, 1000);
-            } else {
-                console.log('✅ CSS principal carregado com sucesso');
+                var fallbackStyle = document.createElement('style');
+                fallbackStyle.id = 'fallback-css';
+                fallbackStyle.textContent = `
+                    /* Fallback CSS Premium */
+                    .btn-premium { 
+                        background: linear-gradient(135deg, #D4AF37 0%, #B8921F 100%);
+                        color: #000;
+                        border: none;
+                        padding: 0.75rem 1.5rem;
+                        border-radius: 0.5rem;
+                        font-weight: 600;
+                        transition: all 0.3s ease;
+                    }
+                    .card-premium {
+                        background: #fff;
+                        border: 1px solid #D4AF37;
+                        border-radius: 1rem;
+                        box-shadow: 0 4px 6px rgba(212, 175, 55, 0.1);
+                    }
+                    .text-accent { color: #D4AF37 !important; }
+                    .bg-surface { background: #fafafa; }
+                    .scroll-reveal { opacity: 1; transform: none; }
+                    .container { max-width: 1200px; margin: 0 auto; }
+                    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+                    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+                `;
+                document.head.appendChild(fallbackStyle);
+                console.log('🔄 Fallback CSS aplicado');
             }
         });
     </script>

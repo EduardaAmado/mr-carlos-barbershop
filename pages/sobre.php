@@ -33,8 +33,8 @@ include_once __DIR__ . '/../includes/header.php';
                         Sobre o Mr. Carlos Barbershop
                     </h1>
                     <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                        Mais de 35 anos dedicados à arte de cuidar do visual masculino, 
-                        combinando tradição familiar com as mais modernas técnicas de barbearia.
+                        Carlos Alves, amante do mundo da barbearia, começou por trabalhar num anexo para os seus amigos 
+                        até decidir trocar os autocarros pela barbearia e oferecer um serviço diferenciado aos homens.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="servicos.php" 
@@ -84,21 +84,20 @@ include_once __DIR__ . '/../includes/header.php';
                     <div class="space-y-6">
                         <h3 class="text-2xl font-semibold text-gray-900">A Origem de uma Tradição</h3>
                         <p class="text-gray-600 leading-relaxed">
-                            Tudo começou em 1985, quando Carlos Pereira, um jovem barbeiro apaixonado por sua profissão, 
-                            decidiu abrir sua própria barbearia no coração de São Paulo. Com apenas uma cadeira e muita 
-                            determinação, ele começou a construir o que hoje é uma das barbearias mais respeitadas da cidade.
+                            Carlos Alves, amante do mundo da barbearia, começou por trabalhar num anexo para os seus amigos 
+                            até decidir trocar os autocarros pela barbearia. Assim, abriu a sua própria barbearia com a 
+                            missão de prestar um serviço diferenciado aos homens.
                         </p>
                         <p class="text-gray-600 leading-relaxed">
-                            Ao longo dos anos, Carlos não apenas aperfeiçoou suas técnicas, mas também formou uma nova 
-                            geração de barbeiros, passando seus conhecimentos e paixão pelo ofício para seus filhos e 
-                            aprendizes.
+                            Com paixão e dedicação, Carlos aperfeiçoou suas técnicas ao longo do tempo, sempre focado em 
+                            oferecer o melhor atendimento e cuidado personalizado para cada cliente.
                         </p>
                         <div class="bg-dourado bg-opacity-10 border-l-4 border-dourado p-4 rounded-r-lg">
                             <p class="text-gray-700 italic">
-                                "Cada cliente que senta em nossa cadeira não é apenas um corte, é uma história, 
-                                uma confiança depositada em nossas mãos."
+                                "Cada cliente que senta na minha cadeira não é apenas um corte, é uma pessoa que confia 
+                                em mim para cuidar da sua imagem. É uma responsabilidade que levo a sério."
                             </p>
-                            <p class="text-sm text-gray-600 mt-2">- Carlos Pereira, Fundador</p>
+                            <p class="text-sm text-gray-600 mt-2">- Carlos Alves</p>
                         </div>
                     </div>
                 </div>

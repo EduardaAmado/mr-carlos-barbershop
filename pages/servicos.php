@@ -69,7 +69,7 @@ include_once __DIR__ . '/../includes/header.php';
                 <!-- Subtítulo Elegante -->
                 <p class="text-xl md:text-2xl lg:text-3xl mb-12 text-gray-300 font-light leading-relaxed max-w-4xl mx-auto">
                     Cada serviço é uma <span class="text-yellow-400 font-semibold">experiência única</span>, 
-                    executada por barbeiros master com <span class="text-yellow-400 font-semibold">mais de 35 anos</span> de tradição
+                    executado pelo <span class="text-yellow-400 font-semibold">Carlos Alves</span> com paixão e dedicação
                 </p>
 
                 <!-- Botões de Ação Modernos -->
@@ -105,8 +105,8 @@ include_once __DIR__ . '/../includes/header.php';
                         <div class="w-16 h-16 mx-auto bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4">
                             <i class="fas fa-user-tie text-white text-2xl"></i>
                         </div>
-                        <div class="text-2xl font-bold text-yellow-400 mb-2">5</div>
-                        <div class="text-gray-400 text-sm">Barbeiros Master</div>
+                        <div class="text-2xl font-bold text-yellow-400 mb-2">1</div>
+                        <div class="text-gray-400 text-sm">Barbeiro Especialista</div>
                     </div>
                     <div class="text-center">
                         <div class="w-16 h-16 mx-auto bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4">
@@ -324,8 +324,8 @@ include_once __DIR__ . '/../includes/header.php';
                 </h2>
                 
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Profissionais certificados com anos de experiência, especializados em técnicas tradicionais 
-                    e tendências modernas para garantir o resultado perfeito
+                    Carlos Alves, profissional especializado com paixão pela barbearia, 
+                    oferecendo técnicas tradicionais e modernas para garantir o resultado perfeito
                 </p>
             </div>
 
@@ -466,7 +466,7 @@ include_once __DIR__ . '/../includes/header.php';
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-4">Por Que Escolher o Mr. Carlos?</h2>
                 <p class="text-lg text-gray-300">
-                    Mais de 35 anos oferecendo o melhor em cuidados masculinos
+                    Serviço diferenciado aos homens com paixão e dedicação
                 </p>
             </div>
 
@@ -476,8 +476,8 @@ include_once __DIR__ . '/../includes/header.php';
                     <div class="w-16 h-16 bg-dourado rounded-full mx-auto mb-4 flex items-center justify-center group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
                         <i class="fas fa-award text-black text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-dourado transition-colors">35+ Anos</h3>
-                    <p class="text-gray-400">De experiência e tradição em cuidados masculinos</p>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-dourado transition-colors">Experiência</h3>
+                    <p class="text-gray-400">Paixão e dedicação em cuidados masculinos</p>
                 </div>
 
                 <!-- Qualidade -->
@@ -492,10 +492,10 @@ include_once __DIR__ . '/../includes/header.php';
                 <!-- Profissionais -->
                 <div class="text-center group">
                     <div class="w-16 h-16 bg-dourado rounded-full mx-auto mb-4 flex items-center justify-center group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
-                        <i class="fas fa-users text-black text-2xl"></i>
+                        <i class="fas fa-user text-black text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-dourado transition-colors">Equipe Especializada</h3>
-                    <p class="text-gray-400">Profissionais capacitados e experientes</p>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-dourado transition-colors">Profissional Dedicado</h3>
+                    <p class="text-gray-400">Carlos Alves, especialista em barbearia</p>
                 </div>
 
                 <!-- Ambiente -->
@@ -515,7 +515,7 @@ include_once __DIR__ . '/../includes/header.php';
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold text-black mb-6">Pronto para Transformar seu Visual?</h2>
             <p class="text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
-                Agende seu horário e descubra por que somos a escolha número 1 em cuidados masculinos
+                Agende seu horário e descubra o serviço diferenciado do Carlos Alves
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="agendar.php" 

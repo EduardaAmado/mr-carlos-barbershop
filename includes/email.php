@@ -6,26 +6,19 @@
  * Finalidade: Sistema completo de envio de emails com PHPMailer
  */
 
-// Importar PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-// Carregar autoloader do Composer (assumindo instalação via Composer)
-// Se não tiver Composer, descomente as linhas abaixo e baixe o PHPMailer manualmente
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// Configurações de email (configure estas constantes no config.php)
-if (!defined('SMTP_HOST')) define('SMTP_HOST', 'smtp.gmail.com'); // ou seu servidor SMTP
+if (!defined('SMTP_HOST')) define('SMTP_HOST', 'smtp.gmail.com');
 if (!defined('SMTP_PORT')) define('SMTP_PORT', 587);
 if (!defined('SMTP_USERNAME')) define('SMTP_USERNAME', 'seu-email@gmail.com');
 if (!defined('SMTP_PASSWORD')) define('SMTP_PASSWORD', 'sua-senha-de-app');
 if (!defined('SMTP_FROM_EMAIL')) define('SMTP_FROM_EMAIL', SMTP_USERNAME);
 if (!defined('SMTP_FROM_NAME')) define('SMTP_FROM_NAME', 'Mr. Carlos Barbershop');
 
-/**
- * Classe principal para envio de emails
- */
 class EmailService {
     private $mailer;
     private $debug_mode;
@@ -35,9 +28,6 @@ class EmailService {
         $this->configurarMailer();
     }
     
-    /**
-     * Configurar PHPMailer com as configurações SMTP
-     */
     private function configurarMailer() {
         $this->mailer = new PHPMailer(true);
         
